@@ -1,0 +1,33 @@
+<div class="container">
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+    </div>
+    <input type="text" #query (input)="filter(query.value)" class="form-control" placeholder="Search Products"
+      aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <div class="list-group">
+        <a class="list-group-item list-group-item-action" [class.active]="activeCategory === -1" (click)="filterProducts(-1)">
+            All
+          </a>
+      <a *ngFor="let c of categories" class="list-group-item list-group-item-action" [class.active]="c.categoryId === activeCategory" (click)="filterProducts(c.categoryId)">
+        {{c.name}}
+      </a>
+    </div>
+  </div>
+  <div class="col">
+    <div class="row">
+      <ng-container *ngFor="let p of filteredProducts">
+        <!-- <div class="col"> -->
+        <app-product-card [product]="p"></app-product-card>
+        <!-- </div> -->
+        <!-- <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>  -->
+      </ng-container>
+    </div>
+  </div>
+</div>
