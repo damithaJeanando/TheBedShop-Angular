@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Quatity</th>
+      <th scope="col">Unit Price</th>
+      <th scope="col">Total Price</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cartItem of cartItems; let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{cartItem.product.name}}</td>
+      <td>
+        <input class="form-row col-3 form-control" type="number" value="{{cartItem.quantity}}" min="1" (change)="onQuantityChange($event.target.value, i)">
+      </td>
+      <td>{{cartItem.product.price}}</td>
+      <td>{{cartItem.product.price*cartItem.quantity}}</td>
+      <td><a class="btn btn-danger" (click)="deleteCartItem(cartItem.cartId)">Delete</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="container">
+<button class="btn btn-primary btn-lg btn-block" routerLink="checkout" id="checkoutbtn">Checkout : LKR {{total}}</button>
+</div>

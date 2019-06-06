@@ -12,7 +12,7 @@ import { CategoryService } from '../category.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private service : ProductService, private catService : CategoryService, private dataService : DataService) { }
+  constructor(private service : ProductService, private categoryService : CategoryService, private dataService : DataService) { }
 
   products : Product[] = [];
   filteredProducts : Product[]
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getAllProducts();
-    this.catService.getCategories().subscribe(categories => {
+    this.categoryService.getCategories().subscribe(categories => {
       
       this.categories = categories})
   }
@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     this.service.getProducts().subscribe(res =>{
       console.log("fetching products...");
        this.filteredProducts = this.products = res;
-      // console.log(this.products);
+      console.log(this.products);
     }, err => {
       console.log("An error has occured during fetching products from the server -> " + err);
     })

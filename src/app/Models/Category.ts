@@ -1,6 +1,6 @@
 export interface Category {
     
     categoryId : number;
-    name : string;
+    categoryName : string;
     itemsAvailable : number
 }

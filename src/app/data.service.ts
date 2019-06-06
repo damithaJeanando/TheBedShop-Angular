@@ -5,11 +5,11 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
   providedIn: 'root'
 })
 export class DataService {
+  
+  constructor() { }
 
   private messageSource = new BehaviorSubject('default message');
   currentMessage = this.messageSource.asObservable();
-  
-  constructor() { }
 
   searchQuery(query:string){
     this.messageSource.next(query);

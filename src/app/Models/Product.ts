@@ -1,3 +1,5 @@
+import { Promotion } from './Promotion';
+
 export interface Product {
     
     productId: string;
@@ -7,5 +9,6 @@ export interface Product {
     productPrice: number;
     productQuantity:number;
     productImage:string;
+    promotion:Promotion;
 
 }

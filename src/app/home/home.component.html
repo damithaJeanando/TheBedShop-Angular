@@ -15,19 +15,19 @@
         <a class="list-group-item list-group-item-action" [class.active]="activeCategory === -1" (click)="filterProducts(-1)">
             All
           </a>
-      <a *ngFor="let c of categories" class="list-group-item list-group-item-action" [class.active]="c.categoryId === activeCategory" (click)="filterProducts(c.categoryId)">
-        {{c.name}}
+      <a *ngFor="let c of categories" class="list-group-item list-group-item-action" [class.active]="c.categoryId === activeCategory" (click)="filterProducts(c.categoryName)">
+        {{c.categoryName}}
       </a>
     </div>
   </div>
   <div class="col">
     <div class="row">
-      <ng-container *ngFor="let p of filteredProducts">
+       <ng-container *ngFor="let p of filteredProducts"> 
         <!-- <div class="col"> -->
         <app-product-card [product]="p"></app-product-card>
-        <!-- </div> -->
-        <!-- <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>  -->
-      </ng-container>
+        <!-- </div>
+        <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>  -->
+      </ng-container> 
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Category } from './Models/Category';
 
 @Injectable({
@@ -11,18 +11,17 @@ export class CategoryService {
 
   url = "http://localhost:8080/category/";
 
+  email = sessionStorage.getItem("email")
+  password = sessionStorage.getItem("password")
+
   getCategories() {
-    return this.http.get<Category[]>(this.url+"public/all");
+    return this.http.get<Category[]>(this.url+"public/getall");
   }
 
   addCategory(categoryName){
-    return this.http.post<Category>(this.url+"add", categoryName).
-    subscribe(category => {
-      console.log(category.name + " sucessfully added")
-    },
-    err => {
-      console.log(categoryName + "Couldn't post"+ err)
-    });
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.email + ':' + this.password)});
+    
+    return this.http.post<Category>(this.url+"add", categoryName, {headers})
 
   }
 
