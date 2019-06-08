@@ -40,6 +40,12 @@ export class CartService {
     return this.http.delete(this.url + id, {headers});
   }
 
+  deleteCartItemsByUser(email : string) {
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.email + ':' + this.password)});
+
+    return this.http.delete(this.url + "user/" + email, {headers});
+  }
+
   addItemsToCart(cartItems: Cart[]) {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.email + ':' + this.password)});
 

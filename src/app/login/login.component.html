@@ -1,11 +1,11 @@
 <form #form="ngForm" class="form-signin" (ngSubmit)="authenticateUser(form.value)">
-  <h1 class="h3 mb-3 font-weight-normal">The Bed Shop</h1>
+  <h1 class="h3 mb-5 ml-5 font-weight-high">THE BED SHOP</h1>
   <label for="inputEmail" class="sr-only">Email address</label>
   <input type="email" id="inputEmail" class="form-control" placeholder="Email address" ngModel #email="ngModel" name="email" required autofocus>
   <label for="inputPassword" class="sr-only">Password</label>
   <input type="password" id="inputPassword" class="form-control" placeholder="Password" ngModel #password="ngModel" name="password" required>
  
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <button class="btn btn-lg btn-primary-light btn-block" type="submit">Sign in</button>
   
 </form>
 <div class="form-signin">

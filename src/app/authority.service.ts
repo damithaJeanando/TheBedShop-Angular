@@ -21,11 +21,11 @@ export class AuthorityService {
   }
 
   CheckEmail(email:string) {
-    return this.http.get(this.url+"public/check/"+email);
+    return this.http.get(this.url+"check/"+email);
   }
 
   getUser(email:string){
-    return this.http.get<getUser>(this.url+"auth/email/"+email)
+    return this.http.get<getUser>(this.url+"email/"+email)
   }
 
   authenticate(email:string, password:string) {

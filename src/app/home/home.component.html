@@ -9,17 +9,8 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-3">
-    <div class="list-group">
-        <a class="list-group-item list-group-item-action" [class.active]="activeCategory === -1" (click)="filterProducts(-1)">
-            All
-          </a>
-      <a *ngFor="let c of categories" class="list-group-item list-group-item-action" [class.active]="c.categoryId === activeCategory" (click)="filterProducts(c.categoryName)">
-        {{c.categoryName}}
-      </a>
-    </div>
-  </div>
+<div class="row ml-4">
+  
   <div class="col">
     <div class="row">
        <ng-container *ngFor="let p of filteredProducts"> 
@@ -30,4 +21,15 @@
       </ng-container> 
     </div>
   </div>
+  <div class="col-2 mr-2">
+      <div class="list-group">
+          <a class="list-group-item list-group-item-action list-group-item-dark" [class.active]="activeCategory === -1" (click)="filterProducts(-1)">
+              All
+            </a>
+        <a *ngFor="let c of categories" class="list-group-item list-group-item-action list-group-item-dark" [class.active]="c.categoryId === activeCategory" (click)="filterProducts(c.categoryId)">
+          {{c.categoryName}}
+        </a>
+      </div>
+    </div>
+
 </div>

@@ -21,7 +21,7 @@ export class CategoryService {
   addCategory(categoryName){
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.email + ':' + this.password)});
     
-    return this.http.post<Category>(this.url+"add", categoryName, {headers})
+    return this.http.post<Category>(this.url+"auth/new_category", categoryName, {headers})
 
   }
 

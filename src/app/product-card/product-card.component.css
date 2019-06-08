@@ -15,14 +15,14 @@
 
 
 #acbtn:hover {
-    background-color: green;
+    background-color:lightgray;
 }
 
 .promocard {
-    background-color: rgba(62, 201, 235, 0.082);
+    background-color: darkgray;
     
 }
 
 .promoacbtn{
-    background-color: rgb(191, 199, 164)
+    background-color:lightgray;
 }

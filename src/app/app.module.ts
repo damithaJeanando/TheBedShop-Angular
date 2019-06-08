@@ -13,6 +13,11 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { AddProductsComponent } from './add-products/add-products.component';
+import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { ViewOrdersComponent } from './view-orders/view-orders.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +28,12 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ProductCardComponent,
     RegisterComponent,
     CartComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    AddProductsComponent,
+    AdminOrdersComponent,
+    AdminProductsComponent,
+    CheckoutComponent,
+    ViewOrdersComponent
   ],
   imports: [
     BrowserModule,

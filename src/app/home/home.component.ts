@@ -40,12 +40,14 @@ export class HomeComponent implements OnInit {
 
   filter(query:string) {
     this.filteredProducts  = (query) ? this.products.filter(p=>{
-      return p.productName.toLowerCase().includes(query.toLowerCase()) || p.productDescription.toLowerCase().includes(query.toLowerCase())
+      return p.name.toLowerCase().includes(query.toLowerCase()) || p.description.toLowerCase().includes(query.toLowerCase())
     }) : this.products;
     
 }
 
 filterProducts(categoryId) {
+  console.log(categoryId)
+  
   this.activeCategory = categoryId;
   if(categoryId == "-1"){
     this.getAllProducts();
@@ -53,6 +55,7 @@ filterProducts(categoryId) {
   {
     this.service.getProductsByCategory(categoryId).subscribe(res => {
     this.filteredProducts = res;
+    console.log(res);
   })
 }
 }

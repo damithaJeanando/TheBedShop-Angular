@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-5">
+      <form id="addProdFrm" #f="ngForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+              <label for="title">Product Name</label>
+              <input id="title" type="text" class="form-control" name="name"  placeholder="Enter product name" [(ngModel)]="product.name" required>
+              
+          </div>
+          <div class="form-group">
+              <label for="category">Product Category</label>
+              <select id="category" type="text" class="form-control" name="categoryId"  placeholder="Enter product category" [(ngModel)]="product.categoryId" required>
+                  <option value=""></option>  
+                  <option *ngFor="let c of categories; let i = index" [value]="c.categoryId">
+                      {{c.categoryName}}
+                  </option>
+              </select> 
+              
+          </div>
+          <div class="form-group">
+              <label for="desc">Product Description</label>
+              <input id="desc" class="form-control" name="description"  placeholder="Enter product description" [(ngModel)]="product.description"  required>
+              
+          </div>
+          <div class="form-group">
+              <label for="price">Product Price</label>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text">Rs.</span>
+                  </div>
+                  <input id="price" type="number" class="form-control" name="price"  placeholder="Enter product price" [(ngModel)]="product.price" required>
+              </div>
+             
+          </div>
+          <div class="form-group">
+                  <label for="qty">Product Quantity</label>
+                  <input id="qty" type="number" class="form-control" name="quantity"  placeholder="Enter product quantity" [(ngModel)]="product.quantity" required>
+                  
+          </div>
+          <div class="form-group">
+              <label for="pImg">Product Image</label>
+                  <input id="img" type="url" class="form-control" name="image" placeholder="Enter product image URL" [(ngModel)]="product.image" required>
+                  
+          </div>
+      </form>
+      <button type="submit" form="addProdFrm" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+      <button class="btn btn-secondary ml-2" (click)="previewCard(f.value)">Preview</button>
+
+  </div>
+  <div class="col-7">
+      <div *ngIf="preview" class="card" style="width : 20rem;">
+          <img class="card-img-top" [src]= "product.image">
+          <div class="card-body">
+              <h4 class="card-title">{{product.name}}</h4>
+              <p class="card-text">{{product.price | currency : 'LKR'}}</p>
+          </div> 
+      </div>
+  </div>
+</div>

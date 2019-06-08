@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<table class="table table-striped table table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -18,11 +18,11 @@
       </td>
       <td>{{cartItem.product.price}}</td>
       <td>{{cartItem.product.price*cartItem.quantity}}</td>
-      <td><a class="btn btn-danger" (click)="deleteCartItem(cartItem.cartId)">Delete</a></td>
+      <td><a class="btn btn-secondary" (click)="deleteCartItem(cartItem.cartId)">Delete</a></td>
     </tr>
   </tbody>
 </table>
 
 <div class="container">
-<button class="btn btn-primary btn-lg btn-block" routerLink="checkout" id="checkoutbtn">Checkout : LKR {{total}}</button>
+<button class="btn btn-secondary btn-lg btn-block" routerLink="checkout" id="checkoutbtn">Checkout : LKR {{total}}</button>
 </div>

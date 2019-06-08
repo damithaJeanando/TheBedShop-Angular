@@ -38,7 +38,7 @@ export class NavBarComponent implements OnInit {
       this.authorityService.getUser(name).subscribe(user => {
           this.user = user
           console.log(user.role[0])
-          if(user.role[0].roleId == "aifi33"){
+          if(user.role[0].roleId == "1"){
             this.admin = true;
           }else{
             this.admin = false;

@@ -52,7 +52,7 @@ export class CartComponent implements OnInit {
 
   calTotal() {
     for(let cartItem of this.cartItems){
-      this.total = cartItem.quantity*cartItem.product.productPrice + this.total;
+      this.total = cartItem.quantity*cartItem.product.price + this.total;
     }
   }
 }

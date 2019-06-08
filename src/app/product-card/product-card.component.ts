@@ -40,8 +40,8 @@ export class ProductCardComponent implements OnInit {
 
   promotions(){
     if(this.pro.promotion != null){
-     let promoPrice = this.pro.productPrice * this.pro.promotion.promotionRate
-     this.dicountedPrice = this.pro.productPrice - promoPrice;
+     let promoPrice = this.pro.price * this.pro.promotion.promotionRate
+     this.dicountedPrice = this.pro.price - promoPrice;
     }
   }
 

@@ -3,12 +3,12 @@ import { Promotion } from './Promotion';
 export interface Product {
     
     productId: string;
-    productName:string;
-    productCategory:string;
-    productDescription:string;
-    productPrice: number;
-    productQuantity:number;
-    productImage:string;
+    name:string;
+    categoryId:string;
+    description:string;
+    price: number;
+    quantity:number;
+    image:string;
     promotion:Promotion;
 
 }
